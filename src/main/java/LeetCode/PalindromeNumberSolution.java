@@ -8,6 +8,7 @@ public class PalindromeNumberSolution {
 		int x = userInput.nextInt();
 		System.out.println("x = " + x);
 		System.out.println("Result: " + isPalindrome(x));
+		userInput.close();
 	}
 
 	public static boolean isPalindrome(int x) {
