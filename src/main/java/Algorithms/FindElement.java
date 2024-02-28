@@ -4,7 +4,9 @@ import java.util.Arrays;
 
 public class FindElement {
 	public static void main(String[] args) {
-		int[] array = RandomArray.randomArray();
+		RandomArray randomArray = new RandomArray();
+		randomArray.setArrayLength(25);
+		int[] array = randomArray.generate();
 		System.out.println(Arrays.toString(Sorts.quickSort(array)));
 		int target = 28;
 		int resultIterative = binarySearchIterative(array, target);

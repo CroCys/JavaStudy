@@ -1,18 +1,7 @@
 package Algorithms;
 
-import java.util.Arrays;
-
-public class Sorts extends RandomArray {
-	public static void main(String[] args) {
-		System.out.println("Пузырьковая сортировка: " + Arrays.toString(bubbleSort(randomArray())) + "\n");
-		System.out.println("Сортировка методом выбора: " + Arrays.toString(sortBySelect(randomArray())) + "\n");
-		System.out.println("Сортировка методом вставки: " + Arrays.toString(insertionSort(randomArray())) + "\n");
-		System.out.println("Сортировка Шелла: " + Arrays.toString(shellSort(randomArray())) + "\n");
-		System.out.println("Быстрая сортировка: " + Arrays.toString(quickSort(randomArray())) + "\n");
-	}
-
+public class Sorts {
 	public static int[] bubbleSort(int[] array) {
-		System.out.println("Исходный массив: " + Arrays.toString(array));
 		for (int i = 0; i < array.length - 1; i++) {
 			for (int j = 0; j < array.length - i - 1; j++) {
 				if (array[j] > array[j + 1]) {
@@ -26,7 +15,6 @@ public class Sorts extends RandomArray {
 	}
 
 	public static int[] sortBySelect(int[] array) {
-		System.out.println("Исходный массив: " + Arrays.toString(array));
 		for (int i = 0; i < array.length - 1; i++) {
 			int min = i;
 			for (int j = i + 1; j < array.length; j++) {
@@ -42,7 +30,6 @@ public class Sorts extends RandomArray {
 	}
 
 	public static int[] insertionSort(int[] array) {
-		System.out.println("Исходный массив: " + Arrays.toString(array));
 		for (int i = 1; i < array.length; i++) {
 			int temp = array[i];
 			int j = i;
@@ -56,7 +43,6 @@ public class Sorts extends RandomArray {
 	}
 
 	public static int[] shellSort(int[] array) {
-		System.out.println("Исходный массив: " + Arrays.toString(array));
 		int length = array.length;
 		int step = length / 2;
 		while (step > 0) {
@@ -75,7 +61,6 @@ public class Sorts extends RandomArray {
 	}
 
 	public static int[] quickSort(int[] array) {
-		System.out.println("Исходный массив: " + Arrays.toString(array));
 		if (array == null || array.length == 0) {
 			return array;
 		}
@@ -87,14 +72,12 @@ public class Sorts extends RandomArray {
 		if (left < right) {
 			int pivotIndex = partition(array, left, right);
 
-			// Рекурсивно сортируем элементы до и после опорного элемента
 			quickSort(array, left, pivotIndex - 1);
 			quickSort(array, pivotIndex + 1, right);
 		}
 	}
 
 	private static int partition(int[] array, int left, int right) {
-		// Выбираем опорный элемент (можно выбирать любой элемент, например, последний)
 		int pivot = array[right];
 		int i = left - 1;
 
@@ -104,7 +87,6 @@ public class Sorts extends RandomArray {
 				swap(array, i, j);
 			}
 		}
-		// Помещаем опорный элемент в правильную позицию
 		swap(array, i + 1, right);
 		return i + 1;
 	}
