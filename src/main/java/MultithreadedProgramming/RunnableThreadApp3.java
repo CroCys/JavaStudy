@@ -2,6 +2,7 @@ package MultithreadedProgramming;
 
 class MyThread implements Runnable {
 	//Реализация потока через интерфейс Runnable
+	@Override
 	public void run() {
 		System.out.printf("%s started... \n", Thread.currentThread().getName());
 		try {
@@ -13,7 +14,7 @@ class MyThread implements Runnable {
 	}
 }
 
-public class ThreadApp3 {
+public class RunnableThreadApp3 {
 	public static void main(String[] args) {
 		System.out.println("Main thread started...");
 		Thread myThread = new Thread(new MyThread(), "MyThread");

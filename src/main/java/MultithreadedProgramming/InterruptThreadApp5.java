@@ -6,6 +6,7 @@ class JThread2 extends Thread {
 		super(name);
 	}
 
+	@Override
 	public void run() {
 		System.out.printf("%s started... \n", Thread.currentThread().getName());
 		int counter = 1;
@@ -46,7 +47,7 @@ class JThread2 extends Thread {
 //	}
 }
 
-public class ThreadApp5 {
+public class InterruptThreadApp5 {
 	public static void main(String[] args) {
 		System.out.println("Main thread started...");
 		JThread2 t = new JThread2("JThread");
