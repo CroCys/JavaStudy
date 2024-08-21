@@ -7,23 +7,23 @@ public class DataBaseConnectionTest {
 		Statement statement;
 		String url = "jdbc:postgresql://localhost:5432/test";
 		String user = "postgres";
-		String password = "123";
+		String password = "qwertylang";
 		try {
 			connection = DriverManager.getConnection(url, user, password);
 			statement = connection.createStatement();
 			//Добавление или удаление данных из таблицы
 			statement.executeUpdate("");
 			//Получение данных из таблицы
-			ResultSet result = statement.executeQuery("SELECT * FROM employees ORDER BY id ASC LIMIT 100;");
+			ResultSet result = statement.executeQuery("SELECT * FORM banks;");
 			//Вывод полученных данных
 			while (result.next()) {
 				int id = result.getInt("id");
-				String col1 = result.getString("firstname");
-				String col2 = result.getString("lastname");
+				String col1 = result.getString("name");
+				String col2 = result.getString("address");
 
 				System.out.println("id " + id);
-				System.out.println("firstname " + col1);
-				System.out.println("lastname " + col2);
+				System.out.println("name " + col1);
+				System.out.println("address " + col2);
 			}
 
 			result.close();

@@ -5,23 +5,18 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class FileInputOutputStream {
-	public static void main(String[] args) {
-		String text = "Hello world";
-		fileOutput(text);
-		fileInput();
-	}
 
-	public static void fileOutput(String text) {
-		try (FileOutputStream fos = new FileOutputStream("Notes.txt")) {
+	public void fileOutput(String text) {
+		try (FileOutputStream fos = new FileOutputStream("Notes.txt", true)) {
 			byte[] buffer = text.getBytes();
 			fos.write(buffer, 0, buffer.length);
-			System.out.println("The file has been written");
+			System.out.println("Файл был успешно записан!");
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
 	}
 
-	public static void fileInput() {
+	public void fileInput() {
 		try (FileInputStream fis = new FileInputStream("Notes.txt")) {
 			int i;
 			while ((i = fis.read()) != -1) {

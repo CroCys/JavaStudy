@@ -1,21 +1,21 @@
 package InputOutput;
 
 import java.io.*;
+import java.util.Arrays;
 
 public class BufferedReaderWriter {
-	public static void main(String[] args) {
-		try (BufferedWriter writer = new BufferedWriter(new FileWriter("file.txt"))) {
-			for (int i = 0; i < 10; i++) {
-				writer.write("Hello");
-				writer.newLine();
-				writer.write("World");
-				writer.newLine();
-			}
-			System.out.println("Success");
+
+	public void writeToFile(String... text) {
+		try (BufferedWriter writer = new BufferedWriter(new FileWriter("file.txt", true))) {
+			writer.write(Arrays.toString(text));
+			writer.newLine();
+			System.out.println("Успешно!");
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		}
+	}
 
+	public void readFromFile() {
 		try (BufferedReader reader = new BufferedReader(new FileReader("file.txt"))) {
 			String line;
 			while ((line = reader.readLine()) != null) {

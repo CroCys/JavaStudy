@@ -22,7 +22,7 @@ public class Array {
 
 		System.out.println("Количество строк: " + row + " Количество столбцов: " + col + " Длина массива = " + (row * col));
 		System.out.println("Последний элемент: " + firstArray[firstArray.length - 1][firstArray.length - 1]);
-		System.out.println("Введеный массив: ");
+		System.out.println("Введенный массив: ");
 
 		for (String[] num : firstArray) {
 			for (String s : num) {
