@@ -15,7 +15,5 @@ public class Main {
 		field.set(user, 150);
 		System.out.println(user.getAge());
 		System.out.println(field.get(user));
-
-		HashMap dfg = new HashMap();
 	}
 }

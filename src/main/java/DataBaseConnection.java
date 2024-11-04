@@ -1,7 +1,7 @@
 import java.sql.*;
 //Также была добавлена зависимость в Maven
 
-public class DataBaseConnectionTest {
+public class DataBaseConnection {
 	public static void main(String[] args) {
 		Connection connection;
 		Statement statement;
